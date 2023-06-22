@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+  --gradientColor1: hsl(249, 99%, 64%);
+  --gradientColor2: hsl(278, 94%, 30%);
+  --errorColor: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --lightGrayishViolet: hsl(270, 3%, 87%);
+  --darkGrayishViolet: hsl(279, 6%, 55%);
+  --veryDarkViolet: hsl(278, 68%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  height: 100%;
+  font-family: "Space Grotesk";
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.left {
+  position: absolute;
+  height: 100vh; 
+  width: 30%;
+  background-image: url("assets/bg-main-desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cards {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  gap: 30px;
+}
+
+.front {
+  background-image: url("assets/bg-card-front.png");
+  display: flex;
+  flex-direction: column;
+  margin-left: -70%;
+  border-radius: 10px;
+  width: 447px;
+  height: 230px;
+}
+
+.front svg {
+  display: inline-block;
+  margin: 20px;
+}
+
+.number {
+  bottom: 10px;
+  margin: 40px 58px 0 20px;
+  font-size: x-large;
+  letter-spacing: 3px;
+  height: 31px;
+}
+
+.bottomOfFront {
+  text-transform: uppercase;
+  margin: 20px 25px -50px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back {
+  background-image: url("assets/bg-card-back.png");
+  border-radius: 10px;
+  margin-left: -50%;
+  width: 447px;
+  height: 230px;
+  position: relative;
+}
+
+.cvc {
+  position: absolute;
+  right: 50px;
+  top: 110px;
+}
+
+.right {
+  position: absolute;
+  display: flex;
+  right: 0;
+  height: 100vh;
+  width: 70%;
+  align-items: center;
+}
+
+.form {
+  margin-left: 65%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  width: 350px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--lightGrayishViolet);
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1rem;
+  caret-color: var(--gradientColor2);
+}
+
+input::selection {
+  background: var(--lightGrayishViolet);
+}
+
+label {
+  cursor: pointer;
+  font-size: small;
+}
+
+input:focus {
+  border: 1px solid var(--gradientColor2);
+}
+
+.bottomForm {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.bottomFormLeft {
+  display: flex;
+  flex-direction: column;
+  width:max-content;
+}
+
+#name {
+  display: block;
+  width: 100%;
+  user-select: none;
+}
+
+#number {
+  display: block;
+  width: 100%;
+}
+
+#month, #year {
+  width: 30%;
+}
+
+.bottomFormLeftInputs {
+  display: flex;
+  gap: 10px;
+}
+
+.bottomFormRight {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-left: -100px;
+}
+
+button {
+  width: 100%;
+  background-color: var(--veryDarkViolet);
+  color: var(--white);
+  height: 38px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--gradientColor2);
+}
+
+.error {
+  margin-bottom: 10px;
+  font-size: small;
+  color: var(--errorColor);
+  height: 17px;
+}
+
+.successScreen {
+  margin-left: 65%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  margin-top: 20px;
+  color: var(--veryDarkViolet);
+}
+
+.successMessage {
+  color: var(--darkGrayishViolet);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1075px) {
+  .left {
+  position: absolute;
+  height: 30%; 
+  width: 100vw;
+  background-image: url("assets/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .cards {
+  display: flex;
+  flex-direction: column-reverse;
+  color: var(--white);
+  margin-top: -180px;
+  }
+  .front {
+    z-index: 1;
+    margin: -121px 0 0 0;
+  }
+  .back {
+    margin: 0 0 0 80px;
+  }
+  .right {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    height: 70%;
+    width: 100vw;
+  }
+  .form, .successScreen {
+    margin: 250px auto 0 50%;
+    padding-bottom: 50px;
+  }
+} 
